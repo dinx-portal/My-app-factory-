@@ -1,22 +1,19 @@
 import streamlit as st
+# Yahan apne tools import karo
+from tools import subdomain_finder 
 
-st.set_page_config(page_title="My App Factory", layout="wide")
+st.set_page_config(page_title="My AI Factory", layout="wide")
 
-st.title("🚀 My App Factory")
-st.write("Welcome to your personal App Portal! Yahan se tum apni apps manage karoge.")
+st.title("🚀 My AI Super-App")
+st.sidebar.title("🛠️ Tools Factory")
 
-# Menu
-menu = ["Home", "My Security Tools", "AI Lab"]
-choice = st.sidebar.selectbox("Select a Tool", menu)
+# Sidebar mein tools ka menu
+tool = st.sidebar.selectbox("Choose a Tool", ["Dashboard", "Subdomain Finder"])
 
-if choice == "Home":
-    st.subheader("Dashboard")
-    st.write("Abhi tumhara factory portal live ho chuka hai!")
-    
-elif choice == "My Security Tools":
-    st.subheader("Security Suite")
-    st.write("Yahan tum apne hacking/security tools manage karoge.")
-    
-elif choice == "AI Lab":
-    st.subheader("AI Lab")
-    st.write("Yahan tum AI agents aur generators run karoge.")
+if tool == "Dashboard":
+    st.subheader("Welcome to your Factory!")
+    st.write("Yahan se tum duniya ke har AI tool ko access kar sakte ho.")
+
+elif tool == "Subdomain Finder":
+    # Humne subdomain_finder.py ke andar 'run()' function banaya tha
+    subdomain_finder.run()
